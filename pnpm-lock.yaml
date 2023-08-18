@@ -6,6 +6,8 @@ specifiers:
   '@types/node': 20.5.0
   '@types/react': 18.2.20
   '@types/react-dom': 18.2.7
+  i18n-iso-countries: ^7.6.0
+  lucide-react: ^0.268.0
   plasmo: 0.82.1
   postcss: 8.4.28
   prettier: 3.0.2
@@ -15,6 +17,8 @@ specifiers:
   typescript: 5.1.6
 
 dependencies:
+  i18n-iso-countries: 7.6.0
+  lucide-react: 0.268.0_react@18.2.0
   plasmo: 0.82.1_izm54qgw3if2uwlch7r6l27tda
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -3072,6 +3076,10 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
+  /diacritics/1.3.0:
+    resolution: {integrity: sha512-wlwEkqcsaxvPJML+rDh/2iS824jbREk6DUMUKkEaSlxdYHeS43cClJtsWglvw2RfeXGm6ohKDqsXteJ5sP5enA==}
+    dev: false
+
   /didyoumean/1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
     dev: false
@@ -3556,6 +3564,13 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    dev: false
+
+  /i18n-iso-countries/7.6.0:
+    resolution: {integrity: sha512-HPKjOUKS0BkjiY4ayrsuFbu7Ock++pXLs+FAOYl4WfTL5L0ploEH68fiRAP6Zev5g/jvMFt54KcPGJcb942wbg==}
+    engines: {node: '>= 12'}
+    dependencies:
+      diacritics: 1.3.0
     dev: false
 
   /iconv-lite/0.4.24:
@@ -4072,6 +4087,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+
+  /lucide-react/0.268.0_react@18.2.0:
+    resolution: {integrity: sha512-XP/xY3ASJAViqNqVnDRcEfdxfRB7uNST8sqTLwZhL983ikmHMQ7qQak7ZxrnXOVhB3QDBawdr3ANq0P+iWHP/g==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /magic-string/0.30.2:
     resolution: {integrity: sha512-lNZdu7pewtq/ZvWUp9Wpf/x7WzMTsR26TWV03BRZrXFsv+BI6dy8RAiKgm1uM/kyR0rCfUcqvOlXKG66KhIGug==}
