@@ -5,6 +5,8 @@ import React, { useState } from "react"
 
 import "~style.css"
 
+countries.registerLocale(require("i18n-iso-countries/langs/en.json"))
+
 const Popup: React.FC = () => {
   const [loading, setLoading] = useState(false)
   const [country, setCountry] = useState("")
@@ -12,22 +14,18 @@ const Popup: React.FC = () => {
   const [ip, setIp] = useState("")
   const [error, seterror] = useState("")
 
-  countries.registerLocale(require("i18n-iso-countries/langs/en.json"))
   const fetchData = async () => {
     try {
       setLoading(true)
 
       const ipResponse = await axios.get("https://api.ipify.org?format=json")
-      const ipaddress = ipResponse.data.ip
-      setIp(ipaddress)
+      setIp(ipResponse.data.ip)
 
       await axios
-        .get(
-          `https://ipinfo.io/${ipaddress}?token=${process.env.PLASMO_PUBLIC_TOKEN}`
-        )
+        .get(`https://ipinfo.io/${ip}?token=${process.env.PLASMO_PUBLIC_TOKEN}`)
         .then((response) => {
-          setCountry(response.data.country)
-          setCity(response.data.city)
+          setCountry(response.data?.country)
+          setCity(response.data?.city)
         })
     } catch (error) {
       seterror("There was a error location Your location")
